@@ -2,11 +2,12 @@
 
 namespace App\Services;
 
+use App\Contracts\ChatGPTServiceInterface;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Http;
 
-class ChatGPTService
+class ChatGPTService implements ChatGPTServiceInterface
 {
     protected $apiKey;
 

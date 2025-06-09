@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Contracts\ChatGPTServiceInterface;
 use App\Http\Controllers\Controller;
-use App\Services\ChatGPTService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -13,7 +13,7 @@ class ChatGPTController extends Controller
     /**
      * Create a new class instance.
      */
-    public function __construct(private ChatGPTService $ChatGPTService) {}
+    public function __construct(private ChatGPTServiceInterface $ChatGPTService) {}
 
     public function sendMessage(Request $request): JsonResponse
     {
